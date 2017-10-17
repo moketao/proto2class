@@ -71,10 +71,10 @@ var filters *string
 var filterArr []string
 
 func main() {
-	templatePath = flag.String("f", "./tpl/handle_proto.java", " -f your_template_file_name")
-	outputPath = flag.String("t", "./java/handlers/", " -t your_output_dir")
-	ext = flag.String("ext", "Handler.java", " -ext your_file_ext")
-	filters = flag.String("filters", "Req", " -filters Rsp,Notify")
+	templatePath = flag.String("f", "./tpl/one_proto.as", " -f your_template_file_name")
+	outputPath = flag.String("t", "./js/messages/", " -t your_output_dir")
+	ext = flag.String("ext", ".as", " -ext your_file_ext")
+	filters = flag.String("filters", "", " -filters Rsp,Notify")
 	jsonFile := flag.String("data", "msg.json", " --data msg.json")
 	idFile = flag.String("data2", "mapids.js", " --data2 mapids.js")
 	flag.Parse()
