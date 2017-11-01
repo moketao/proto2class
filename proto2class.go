@@ -199,18 +199,24 @@ func counter() func() int {
 		return i
 	}
 }
-func toAsType(s string) string {
-	if strings.Contains(s, "Array") {
-		return "Array=[]"
+func toAsType(s string,label string) string {
+	if label=="repeated" {
+		return "Array=[] // "+s+" "
 	}
-	if strings.Contains(s, "number") {
+	if  strings.Contains(s, "uint64") || strings.Contains(s, "number") || strings.Contains(s, "uint32") || strings.Contains(s, "float32") || strings.Contains(s, "float64"){
 		return "Number=0"
 	}
 	if strings.Contains(s, "string") {
 		return `String=""`
 	}
-	if strings.Contains(s, "$EN") {
+	if strings.Contains(s, "$EN") || strings.Contains(s, "int32") {
 		return "int"
 	}
-	return "*"
+	if strings.Contains(s, "bool") {
+		return "Boolean"
+	}
+	if strings.Contains(s, "bytes") {
+		return "*"
+	}
+	return "logic.messages."+s
 }

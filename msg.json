@@ -42,6 +42,11 @@
               "name": "RET_FAIL",
               "number": "1",
               "description": "失败"
+            },
+            {
+              "name": "RET_TIME_OUT",
+              "number": "2",
+              "description": "您长时间未操作，链接已断开"
             }
           ]
         },
@@ -106,6 +111,362 @@
       ],
       "extensions": [],
       "messages": [
+        {
+          "name": "CaiDaXiaoHistory",
+          "longName": "CaiDaXiaoHistory",
+          "fullName": "msg.CaiDaXiaoHistory",
+          "description": "猜大小历史",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "roundID",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "num",
+              "description": "",
+              "label": "repeated",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "time",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "serverAllWinCoin",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "serverAllWinGold",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "serverAllLostCoin",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "serverAllLostGold",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "topWin",
+              "description": "",
+              "label": "repeated",
+              "type": "WinVO",
+              "longType": "WinVO",
+              "fullType": "msg.WinVO",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CaiDaXiaoHistoryReq",
+          "longName": "CaiDaXiaoHistoryReq",
+          "fullName": "msg.CaiDaXiaoHistoryReq",
+          "description": "猜大小历史",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "CaiDaXiaoHistoryRsp",
+          "longName": "CaiDaXiaoHistoryRsp",
+          "fullName": "msg.CaiDaXiaoHistoryRsp",
+          "description": "猜大小历史",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "history",
+              "description": "",
+              "label": "repeated",
+              "type": "CaiDaXiaoHistory",
+              "longType": "CaiDaXiaoHistory",
+              "fullType": "msg.CaiDaXiaoHistory",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundIDNow",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundCountDown",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundSum",
+              "description": "",
+              "label": "",
+              "type": "CaiDaXiaoReq",
+              "longType": "CaiDaXiaoReq",
+              "fullType": "msg.CaiDaXiaoReq",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CaiDaXiaoOpenNotify",
+          "longName": "CaiDaXiaoOpenNotify",
+          "fullName": "msg.CaiDaXiaoOpenNotify",
+          "description": "猜大小历史",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "history",
+              "description": "",
+              "label": "",
+              "type": "CaiDaXiaoHistory",
+              "longType": "CaiDaXiaoHistory",
+              "fullType": "msg.CaiDaXiaoHistory",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundIDNow",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundCountDown",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CaiDaXiaoReq",
+          "longName": "CaiDaXiaoReq",
+          "fullName": "msg.CaiDaXiaoReq",
+          "description": "猜大小下注",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "da_coin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "xiao_coin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "baozi_coin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "dan_coin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "shuang_coin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "da_gold",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "xiao_gold",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "baozi_gold",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "dan_gold",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "shuang_gold",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundNum",
+              "description": "只在服务器记录时使用",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CaiDaXiaoRsp",
+          "longName": "CaiDaXiaoRsp",
+          "fullName": "msg.CaiDaXiaoRsp",
+          "description": "猜大小下注rsp",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ret",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundSum",
+              "description": "",
+              "label": "",
+              "type": "CaiDaXiaoReq",
+              "longType": "CaiDaXiaoReq",
+              "fullType": "msg.CaiDaXiaoReq",
+              "defaultValue": ""
+            },
+            {
+              "name": "roundID",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CaiDaXiaoTimeReq",
+          "longName": "CaiDaXiaoTimeReq",
+          "fullName": "msg.CaiDaXiaoTimeReq",
+          "description": "猜大小时间",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "CaiDaXiaoTimeRsp",
+          "longName": "CaiDaXiaoTimeRsp",
+          "fullName": "msg.CaiDaXiaoTimeRsp",
+          "description": "猜大小时间rsp",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dtime",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "defaultValue": ""
+            }
+          ]
+        },
         {
           "name": "ChatReq",
           "longName": "ChatReq",
@@ -355,6 +716,35 @@
           ]
         },
         {
+          "name": "ErrAlertNotify",
+          "longName": "ErrAlertNotify",
+          "fullName": "msg.ErrAlertNotify",
+          "description": "错误提示",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "errMsg",
+              "description": "错误信息，如：您长时间未操作，链接已断开",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "defaultValue": ""
+            },
+            {
+              "name": "code",
+              "description": "错误代码",
+              "label": "",
+              "type": "ENError",
+              "longType": "ENError",
+              "fullType": "msg.ENError",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
           "name": "GMStuffDelReq",
           "longName": "GMStuffDelReq",
           "fullName": "msg.GMStuffDelReq",
@@ -508,6 +898,15 @@
               "type": "uint32",
               "longType": "uint32",
               "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "userName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
               "defaultValue": ""
             }
           ]
@@ -850,6 +1249,82 @@
               "type": "ENError",
               "longType": "ENError",
               "fullType": "msg.ENError",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SanCaiReq",
+          "longName": "SanCaiReq",
+          "fullName": "msg.SanCaiReq",
+          "description": "散财",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "say",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "defaultValue": ""
+            },
+            {
+              "name": "jin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "yin",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "ci",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            },
+            {
+              "name": "manNum",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SanCaiRsp",
+          "longName": "SanCaiRsp",
+          "fullName": "msg.SanCaiRsp",
+          "description": "散财 rsp",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ret",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
               "defaultValue": ""
             }
           ]
@@ -1303,6 +1778,109 @@
               "type": "PlayerList",
               "longType": "PlayerList",
               "fullType": "msg.PlayerList",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "WinOrLostNotify",
+          "longName": "WinOrLostNotify",
+          "fullName": "msg.WinOrLostNotify",
+          "description": "输赢通知",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "open",
+              "description": "",
+              "label": "repeated",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalWinCoin",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalWinGold",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalLostCoin",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalLostGold",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "WinVO",
+          "longName": "WinVO",
+          "fullName": "msg.WinVO",
+          "description": "赢信息",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalWinCoin",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "defaultValue": ""
+            },
+            {
+              "name": "totalWinGold",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
               "defaultValue": ""
             }
           ]
